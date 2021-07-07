@@ -8,3 +8,6 @@ My bioinformatics one liners.
 
 ## grep multiple entries
 `grep 'word1\|word2' file`
+
+## R change ENSGXYZ.X to ENSGXYZ
+`sub('\\.[0-9]*$', '', item)`
