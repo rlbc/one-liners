@@ -31,3 +31,9 @@ Linearize sequence and extract IDs
 Alternative:
 
 `awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' input.fasta > output.fasta`
+
+## Bed files
+
+Get midpoint windows (get the midpoint of interval and then add a fixed number of bases)
+
+`awk -vOFS="\t" -vEXT=4 'width=$3-$2 {if(width % 2 != 0) {width+=1} ; mid=$2+width/2; print $1,mid-EXT,mid+EXT,$4}' a.bed`
