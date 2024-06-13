@@ -9,6 +9,9 @@ My bioinformatics one liners.
 ## grep multiple entries
 `grep 'word1\|word2' file`
 
+## Check if 2 folders are the same
+`diff -r -q /path/dir1 /path/dir2`
+
 ## R change ENSGXYZ.X to ENSGXYZ
 `sub('\\.[0-9]*$', '', item)`
 
