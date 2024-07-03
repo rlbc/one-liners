@@ -35,6 +35,10 @@ Alternative:
 
 `awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' input.fasta > output.fasta`
 
+Get number for reads in fastq
+
+`echo $(( $(wc -l <reads.fq) /4 ))`
+
 ## Bed files
 
 Get midpoint windows (get the midpoint of interval and then add a fixed number of bases)
