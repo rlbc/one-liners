@@ -1,6 +1,9 @@
 # one-liners
 My bioinformatics one liners.
 
+## Linux log to file and stdout
+`<command> 2>&1 | tee outputfile`
+
 ## tsv to csv
 `sed 's/\t/,/g' input_file > output_file`
 
