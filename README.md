@@ -38,16 +38,22 @@ Alternative:
 
 `awk '{if(NR==1) {print $0} else {if($0 ~ /^>/) {print "\n"$0} else {printf $0}}}' input.fasta > output.fasta`
 
-Get number for reads in fastq
+Get the number for reads in fastq
 
 `echo $(( $(wc -l <reads.fq) /4 ))`
 
 ## Bed files
 
-Get midpoint windows (get the midpoint of interval and then add a fixed number of bases)
+Get midpoint windows (get the midpoint of the interval and then add a fixed number of bases)
 
 `awk -vOFS="\t" -vEXT=4 'width=$3-$2 {if(width % 2 != 0) {width+=1} ; mid=$2+width/2; print $1,mid-EXT,mid+EXT,$4}' a.bed`
 
 Calculate on columns
 
 `awk '{sum+=($3-$2)+1} END {print sum}' file.bed`
+
+## Other files
+
+Split a file based on column value (in this case for tab-delimited)
+
+`awk -F '\t' '{print>$13}' myPeaks.bed`
